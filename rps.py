@@ -1,13 +1,43 @@
 import random
 choices = 'rps'
 print("Welcome to Rock Paper Scissors!")
+
 while True:
-    print("Enter \'r\' for Rock, \'p\' for Paper, \'s\' for Scissors")
+    print("Enter \'r\' for Rock, \'p\' for Paper, \'s\' for Scissors or \'?\' to commands.")
     ans = input("Enter your choice: ")
     ans = ans.lower()
+
+    if ans == 'q':
+        print("Thanks for playing!")
+        break
+    
+    if ans == '?':
+        print("Commands:")
+        print("r - Rock")
+        print("p - Paper")
+        print("s - Scissors")
+        print("q - Quit")
+        print("w - Print choices string")
+        print("reset - Reset learning")
+        print("*************************************************")
+        continue
+
+
+    if ans == 'w':
+        print("Current string of choices is")
+        print(choices)
+        print("*************************************************")
+        continue
+
+    if ans == 'reset':
+        choices = 'rps'
+        print("Choices reset.")
+        print("*************************************************")
+        continue
+
     #check if the input is valid
     if ans not in choices:
-     print("Invalid choice. Please enter \'r\', \'p\', or \'s\'.")
+     print("Invalid choice. Enter '?' for help.")
      continue
     else:
         #print(choices) add this if you want to see the choices
@@ -27,6 +57,7 @@ while True:
         elif comp == "s":
             print("Computer chose: Rock")
         else:
+            print("*************************************************")
             continue
 
         if ans == comp:
@@ -39,3 +70,4 @@ while True:
             print("You won!")
         else:
             print("its tie")
+        print("*************************************************")
